@@ -1,0 +1,18 @@
+Package: genepADMM
+Title: Solve Cox and Generalized Linear Models via  ADMM
+Version: 1.0
+Authors@R: c(person("Hui", "Jiang", email = "jianghui@umich.edu", role = "cre"), 
+    person("Lam","Tran", email="lamtran@umich.edu", role = "aut"))
+Description: An inplementation of the Alternating Direction Method of Multipliers in R.  Given data from 
+    survival (Cox) certain GLMs (Gaussian, poisson, binomial), it can estimate parameters for each covariate.  It 
+    includes options on whether to include an intercept effect, to solve exactly or use an inexact update
+    in each iteration (which greatly speeds up computation time), or solve over a user-defined lambda sequence.
+    At each iteration, it outputs the parameter estimates and the lambda at that iteration, as well as the
+    solution path upon completion.
+Imports:
+    spatstat,
+    spatstat.utils
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
