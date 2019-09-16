@@ -30,7 +30,7 @@ beta3=0.5
 beta4=-0.5
 betazeroes<-rep(0,6)
 betavector<-c(beta1,beta2,beta3,beta4,t(betazeroes))
-n=200
+n=50
 xdata<-matrix(rnorm(n*length(betavector)),ncol=length(betavector))
 times=rexp(n,c0*exp(rowSums(t(t(xdata)*betavector))))
 time.censor=rexp(n,c0*exp(beta1*xdata[,1]))
