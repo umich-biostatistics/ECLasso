@@ -24,7 +24,7 @@ Please refer to the ECLasso.fit documentation for more details about function op
 }
 }
 \author{
-\itemize {
+\itemize{
 \item Lam Tran <lamtran@umich.edu>
 \item Hui Jiang <jianghui@umich.edu>
 }
