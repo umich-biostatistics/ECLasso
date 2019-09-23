@@ -42,6 +42,6 @@ time <- ifelse(times<time.censor, times, time.censor)
 ECLasso.fit(x=xdata,y=time,family="cox",intercept=FALSE,equality=TRUE,censor=censorv,inexact=TRUE)
 `
 ## Troubleshooting
-Please direct questions to jianghui@umich.edu
+Please direct questions to Lam Tran at lamtran@umich.edu
 
 
