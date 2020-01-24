@@ -45,6 +45,14 @@ ECLasso.fit(x = xdata, y = time, family = "cox", intercept = FALSE, equality = T
 ## Understanding ECLasso's output
 Upon completion, ECLasso outputs a list with 6 items by default: "time", "iter", "lambda", "intercept", "highindices", and "highparams".
 
+Time: Displays the time (in seconds) it took for ECLasso to complete. 
+Iter: At each lambda, displays the number of ADMM iterations it took to converge or the maximum iterations, whichever is smaller. Consider increasing the maximum number of iterations if by the end of the sequence, the default maximum of 2000 iterations is still used, in order to ensure proper convergence. 
+Lambda: The value of lambda along the sequence; the weight associated with the lasso penalty. 
+Intercept: If specified, returns the intercept of the fitted model.
+Highindicies: The indices of the predictors with the largest absolute parameter value upon ECLasso completion. Note that choosing predictors this way is only an approximation for selection based on the order predictors enter the regression model. 
+Highparams: The estimated values of the parameters associated with the predictors indexed by "highindicies".
+
+ECLasso outputs a plot of the solution path of the data, proceeding from right to left. Of particular note is the point when the parameter estimates first become nonzero; assuming enough iteration steps were performed, we are guaranteed to have 2 predictors enter the model as a pair. For further details about interpretation, please consult the supplementary material. 
 ## Troubleshooting
 Please direct questions to Lam Tran at lamtran@umich.edu
 
