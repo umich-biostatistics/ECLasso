@@ -31,11 +31,11 @@ beta4=-0.5
 betazeroes<-rep(0,6)
 betavector<-c(beta1,beta2,beta3,beta4,t(betazeroes))
 n=50
-xdata<-matrix(rnorm(n*length(betavector)),ncol=length(betavector))
-times=rexp(n,c0*exp(rowSums(t(t(xdata)*betavector))))
-time.censor=rexp(n,c0*exp(beta1*xdata[,1]))
-censorv=ifelse(times<time.censor, 1, 0)
-time <- ifelse(times<time.censor, times, time.censor)
+xdata<-matrix(rnorm(n*length(betavector)),ncol=length(betavector))  ##simulated values for covariates
+times=rexp(n,c0*exp(rowSums(t(t(xdata)*betavector))))  ##time to death
+time.censor=rexp(n,c0*exp(beta1*xdata[,1])) ##time to censoring
+censorv=ifelse(times<time.censor, 1, 0) ##equal to 1 if time to death occurs before time to censoring 
+time <- ifelse(times<time.censor, times, time.censor) ##time is the lesser of death and censoring times
 `````````````
 3. Run the main ECLasso.fit function:
 `
