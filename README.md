@@ -41,6 +41,10 @@ time = ifelse(times < time.censor, times, time.censor) ##time is the lesser of d
 `
 ECLasso.fit(x = xdata, y = time, family = "cox", intercept = FALSE, equality = TRUE, censor = censorv, inexact = TRUE)
 `
+
+## Understanding ECLasso's output
+Upon completion, ECLasso outputs a list with 6 items by default: "time", "iter", "lambda", "intercept", "highindices", and "highparams".
+
 ## Troubleshooting
 Please direct questions to Lam Tran at lamtran@umich.edu
 
