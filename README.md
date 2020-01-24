@@ -24,13 +24,13 @@ library(ECLasso)
 2. Simulate some survival data:
 `````````````
 c0 = 0.1
-beta1 = 1
+beta1 = 1  ##true values of significant predictors
 beta2 = -1
 beta3 = 0.5
 beta4 = -0.5
-betazeroes = rep(0, 6)
+betazeroes = rep(0, 6) ##6 noise predictors 
 betavector = c(beta1, beta2, beta3, beta4, t(betazeroes))
-n = 50
+n = 50  ##sample size
 xdata = matrix(rnorm(n * length(betavector)),ncol = length(betavector))  ##simulated values for covariates
 times = rexp(n, c0 * exp(rowSums(t(t(xdata) * betavector))))  ##time to death
 time.censor = rexp(n, c0 * exp(beta1 * xdata[, 1])) ##time to censoring
